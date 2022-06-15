@@ -1,4 +1,8 @@
 class Company < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   #relacionamento entre company e vacany (many-to-one)
   has_many :vacancies
   #validaçoes dos dados
