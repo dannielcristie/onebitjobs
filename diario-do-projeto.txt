@@ -1,0 +1,30 @@
+1 - iniciar o projeto com rails new:
+    rails new onebitjobs
+
+2 - criar os CRUD das entidades do projeto com rails generate scaffold:
+    rails g scaffold Company name description:text --no-stylesheets
+    rails g scaffold Vacancy title location description:text requirements salary avaliable:boolean company:references --no-stylesheets
+    rails g scaffold Applicant name vacany:references --no-stylesheets
+
+    *--no-stylesheets: não cria o CSS
+
+3 - Mapeamento dos relacionamentos das entidades do projeto
+
+4 - validadando os models
+
+5 - adicionando devise para autentificação
+
+    add gem no Gemfile
+        gem 'devise'
+        bundle install
+    add o devise no projeto:
+        rails g devise:install
+    add em config/environments/development.rb: 
+        config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } => 
+    criar a model do devise: 
+        rails generate devise Company 
+        rails db:migrate
+    
+    criar as views para esse devise model:
+        rails g devise:views
+    
