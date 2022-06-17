@@ -1,0 +1,13 @@
+@import "custom";
+@import "bootstrap/scss/bootstrap";
+@import "login";
+
+.btn-site-light,
+.btn-site-light:hover {
+  color: $site-red;
+  font-weight: bold;
+  border-color: $site-red;
+  &:hover {
+    box-shadow: 0px 0px 0px 1px $site-red;
+  }
+}
