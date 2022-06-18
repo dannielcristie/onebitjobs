@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2022_06_15_131937) do
     t.text "description"
     t.string "requirements"
     t.string "salary"
-    t.boolean "avaliable"
+    t.boolean "available"
     t.integer "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

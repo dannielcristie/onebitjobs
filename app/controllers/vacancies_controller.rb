@@ -12,7 +12,7 @@ class VacanciesController < ApplicationController
 
   # GET /vacancies/new
   def new
-    @vacancy = Vacancy.new
+    @vacancy = Vacancy.new(available: true)
   end
 
   # GET /vacancies/1/edit
@@ -21,11 +21,11 @@ class VacanciesController < ApplicationController
 
   # POST /vacancies or /vacancies.json
   def create
-    @vacancy = Vacancy.new(vacancy_params)
+    @vacancy = current_company.vacancies.build(vacancy_params)
 
     respond_to do |format|
       if @vacancy.save
-        format.html { redirect_to vacancy_url(@vacancy), notice: "Vacancy was successfully created." }
+        format.html { redirect_to @vacancy, notice: "Vacancy was successfully created." }
         format.json { render :show, status: :created, location: @vacancy }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,13 +58,14 @@ class VacanciesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vacancy
-      @vacancy = Vacancy.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def vacancy_params
-      params.require(:vacancy).permit(:title, :location, :description, :requirements, :salary, :avaliable, :company_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_vacancy
+    @vacancy = Vacancy.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def vacancy_params
+    params.require(:vacancy).permit(:title, :location, :description, :requirements, :salary, :available, :company_id)
+  end
 end

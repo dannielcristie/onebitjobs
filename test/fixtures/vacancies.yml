@@ -6,7 +6,7 @@ one:
   description: MyText
   requirements: MyString
   salary: MyString
-  avaliable: false
+  available: false
   company: one
 
 two:
@@ -15,5 +15,5 @@ two:
   description: MyText
   requirements: MyString
   salary: MyString
-  avaliable: false
+  available: false
   company: two

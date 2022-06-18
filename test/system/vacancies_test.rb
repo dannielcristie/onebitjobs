@@ -14,7 +14,7 @@ class VacanciesTest < ApplicationSystemTestCase
     visit vacancies_url
     click_on "New Vacancy"
 
-    check "Avaliable" if @vacancy.avaliable
+    check "available" if @vacancy.available
     fill_in "Company", with: @vacancy.company_id
     fill_in "Description", with: @vacancy.description
     fill_in "Location", with: @vacancy.location
@@ -31,7 +31,7 @@ class VacanciesTest < ApplicationSystemTestCase
     visit vacancies_url
     click_on "Edit", match: :first
 
-    check "Avaliable" if @vacancy.avaliable
+    check "available" if @vacancy.available
     fill_in "Company", with: @vacancy.company_id
     fill_in "Description", with: @vacancy.description
     fill_in "Location", with: @vacancy.location

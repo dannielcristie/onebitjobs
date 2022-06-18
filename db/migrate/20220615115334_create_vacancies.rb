@@ -6,7 +6,7 @@ class CreateVacancies < ActiveRecord::Migration[6.1]
       t.text :description
       t.string :requirements
       t.string :salary
-      t.boolean :avaliable
+      t.boolean :available
       t.references :company, null: false, foreign_key: true
 
       t.timestamps

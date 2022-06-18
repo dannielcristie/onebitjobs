@@ -1,52 +1,44 @@
-<%= form_with(model: vacancy) do |form| %>
-  <% if vacancy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(vacancy.errors.count, "error") %> prohibited this vacancy from being saved:</h2>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_with(model: vacancy) do |form| %>
+      <% if vacancy.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(vacancy.errors.count, "error") %> prohibited this vacancy from being saved:</h2>
 
-      <ul>
-        <% vacancy.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+          <ul>
+            <% vacancy.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="mb-4">
+        <%= form.label 'Título', class: 'form-label' %><br />
+        <%= form.text_field :title, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="mb-4">
+        <%= form.label 'Local', class: 'form-label' %><br />
+        <%= form.text_field :location, class: 'form-control' %>
+      </div>
+      <div class="mb-4">
+        <%= form.label 'Descrição', class: 'form-label' %><br />
+        <%= form.text_area :description, class: 'form-control' %>
+      </div>
+      <div class="mb-4">
+        <%= form.label 'Requisitos', class: 'form-label' %><br />
+        <%= form.text_area :requirements, class: 'form-control' %>
+      </div>
+      <div class="mb-4">
+        <%= form.label 'Salário', class: 'form-label' %><br />
+        <%= form.text_field :salary, class: 'form-control' %>
+      </div>
+      <div class="mb-4">
+        <%= form.check_box :available, class: 'form-check-input', id: 'availableCheck' %>
+        <%= form.label 'Disponível', class: "form-check-label", for: "availableCheck" %><br />
+      </div>
+      <div class="mb-4 mt-5">
+        <%= form.submit "Salvar", class: "btn btn-danger bg-site-red" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :requirements %>
-    <%= form.text_field :requirements %>
-  </div>
-
-  <div class="field">
-    <%= form.label :salary %>
-    <%= form.text_field :salary %>
-  </div>
-
-  <div class="field">
-    <%= form.label :avaliable %>
-    <%= form.check_box :avaliable %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company_id %>
-    <%= form.text_field :company_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

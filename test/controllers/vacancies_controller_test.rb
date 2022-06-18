@@ -17,7 +17,7 @@ class VacanciesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create vacancy" do
     assert_difference('Vacancy.count') do
-      post vacancies_url, params: { vacancy: { avaliable: @vacancy.avaliable, company_id: @vacancy.company_id, description: @vacancy.description, location: @vacancy.location, requirements: @vacancy.requirements, salary: @vacancy.salary, title: @vacancy.title } }
+      post vacancies_url, params: { vacancy: { available: @vacancy.available, company_id: @vacancy.company_id, description: @vacancy.description, location: @vacancy.location, requirements: @vacancy.requirements, salary: @vacancy.salary, title: @vacancy.title } }
     end
 
     assert_redirected_to vacancy_url(Vacancy.last)
@@ -34,7 +34,7 @@ class VacanciesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update vacancy" do
-    patch vacancy_url(@vacancy), params: { vacancy: { avaliable: @vacancy.avaliable, company_id: @vacancy.company_id, description: @vacancy.description, location: @vacancy.location, requirements: @vacancy.requirements, salary: @vacancy.salary, title: @vacancy.title } }
+    patch vacancy_url(@vacancy), params: { vacancy: { available: @vacancy.available, company_id: @vacancy.company_id, description: @vacancy.description, location: @vacancy.location, requirements: @vacancy.requirements, salary: @vacancy.salary, title: @vacancy.title } }
     assert_redirected_to vacancy_url(@vacancy)
   end
 
