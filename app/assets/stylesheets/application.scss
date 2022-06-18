@@ -30,3 +30,11 @@ h1.impact-text {
   background-color: $site-red;
   border-color: $site-red;
 }
+
+.vacancy_card,
+.card {
+  border-radius: 1rem;
+  .card-hearder:first-child {
+    border-radius: 1rem 1rem 0px 0px;
+  }
+}

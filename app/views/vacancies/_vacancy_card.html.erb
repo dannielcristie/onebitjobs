@@ -1,0 +1,24 @@
+<div class="vacancy-card card mb-5">
+  <div class="card-header bg-white">
+    <h5 class="card-title"><%= vacancy.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= vacancy.location %></h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= vacancy.description %></p>
+
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <p class="card-text text-secondary">
+          Posted <%= time_ago_in_words(vacancy.created_at) %> ago
+        </p>
+      </div>
+      <div class="col-lg-6 align-self-end">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <a type="button" target="_blank" href="/vacancies/<%= vacancy.id %>" class='btn btn-light btn-site-light px-3'>
+            <i class="fas fa-eye"></i> Espiar 
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
