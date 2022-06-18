@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :companies
+  # redirecinar o barra vacancies para o root do controller company
+  get "/vacancies" => "vacancies#index", as: :company_root
   resources :applicants
   resources :vacancies
   resources :companies
