@@ -3,7 +3,9 @@ class VacanciesController < ApplicationController
 
   # GET /vacancies or /vacancies.json
   def index
-    @vacancies = Vacancy.all
+    @vacancies = current_company.vacancies.order(
+      created_at: :desc,
+    ).page(params[:page]).per(1)
   end
 
   # GET /vacancies/1 or /vacancies/1.json

@@ -1,3 +1,4 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 @import "custom";
 @import "bootstrap/scss/bootstrap";
 @import "login";
@@ -19,4 +20,13 @@ h1.impact-text {
 
 .bg-site-red {
   background-color: $site-red;
+}
+
+.th-text-color {
+  color: #4f4f4f;
+}
+
+.page-item.active .page-link {
+  background-color: $site-red;
+  border-color: $site-red;
 }
