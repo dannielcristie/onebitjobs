@@ -4,7 +4,11 @@ class ApplicantsController < ApplicationController
 
   # GET /applicants or /applicants.json
   def index
-    @applicants = Applicant.all
+    @vacancy = Vacancy.find(params[:vacancy_id])
+    @applicants = Applicant.joins(:vacancy).where(
+      vacancy_id: params[:vacancy_id],
+      vacancy: { company_id: current_company.id },
+    )
   end
 
   # GET /applicants/1 or /applicants/1.json

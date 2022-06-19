@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class='container'>
+  <h1 class='mb-5'><%= @vacancy.title %></h1>
 
-<h1>Applicants</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>vacancy</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @applicants.each do |applicant| %>
+  <table class="table">
+    <thead class='table-active th-text-color'>
       <tr>
-        <td><%= applicant.name %></td>
-        <td><%= applicant.vacancy_id %></td>
-        <td><%= link_to 'Show', applicant %></td>
-        <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
-        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nome</th>
+        <th class='text-center'>Enviado em</th>
+        <th class='text-center'>Ações</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Applicant', new_applicant_path %>
+    <tbody class='text-secondary'>
+      <% @applicants.each do |applicant| %>
+        <tr>
+          <td class="align-middle"><%= applicant.name %></td>
+          <td class="align-middle text-center"><%= applicant.created_at.strftime("%d/%m/%Y") %></td>
+          <td class="align-middle text-center">
+            <a href='<%= rails_blob_path(applicant.curriculum) if applicant.curriculum.attached? %>' target="_blank" class="text-secondary text-decoration-none" aria-label="Left Align">
+              <i class="fas fa-file-download fa-fw"></i>Baixar
+            </a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
