@@ -3,7 +3,7 @@ class Company < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  #relacionamento entre company e vacany (many-to-one)
+  #relacionamento entre company e vacancy (many-to-one)
   has_many :vacancies
   #validaçoes dos dados
   validates :name, presence: true

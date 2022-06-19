@@ -1,5 +1,5 @@
 class Vacancy < ApplicationRecord
-  #relaciomento entre vacany com company e vacany com applicants (many-to-one)
+  #relaciomento entre vacancy com company e vacancy com applicants (many-to-one)
   belongs_to :company
   has_many :applicants
   #validaçoes dos dados

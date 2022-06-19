@@ -1,4 +1,4 @@
-<%= form_with(model: applicant) do |form| %>
+<%= form_with(model: applicant, class: "row g-3") do |form| %>
   <% if applicant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
@@ -11,17 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="col-auto">
+    <%= form.label "Nome", class: "form-label", for: "name" %>
+    <%= form.text_field :name, class: "form-control", id: "name" %>
   </div>
 
-  <div class="field">
-    <%= form.label :vacany_id %>
-    <%= form.text_field :vacany_id %>
+  <div class="col-auto">
+    <%= form.label "currículo", for: "curriculum", class: "form-label" %>
+    <%= form.file_field :curriculum, class: "form-control", id: "curriculum" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="visually-hidden">
+    <%= form.label "Vaga", for: "vacancy" %>
+    <%= form.text_field :vacancy_id %>
+  </div>
+
+  <div class="col-auto mb-4 mt-5">
+    <%= form.submit "Candidatar-me", class: "btn btn-danger bg-site-red" %>
   </div>
 <% end %>

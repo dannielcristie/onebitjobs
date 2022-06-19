@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  vacany: one
+  vacancy: one
 
 two:
   name: MyString
-  vacany: two
+  vacancy: two

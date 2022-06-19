@@ -17,7 +17,7 @@ class ApplicantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create applicant" do
     assert_difference('Applicant.count') do
-      post applicants_url, params: { applicant: { name: @applicant.name, vacany_id: @applicant.vacany_id } }
+      post applicants_url, params: { applicant: { name: @applicant.name, vacancy_id: @applicant.vacancy_id } }
     end
 
     assert_redirected_to applicant_url(Applicant.last)
@@ -34,7 +34,7 @@ class ApplicantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update applicant" do
-    patch applicant_url(@applicant), params: { applicant: { name: @applicant.name, vacany_id: @applicant.vacany_id } }
+    patch applicant_url(@applicant), params: { applicant: { name: @applicant.name, vacancy_id: @applicant.vacancy_id } }
     assert_redirected_to applicant_url(@applicant)
   end
 

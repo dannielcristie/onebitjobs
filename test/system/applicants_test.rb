@@ -15,7 +15,7 @@ class ApplicantsTest < ApplicationSystemTestCase
     click_on "New Applicant"
 
     fill_in "Name", with: @applicant.name
-    fill_in "Vacany", with: @applicant.vacany_id
+    fill_in "vacancy", with: @applicant.vacancy_id
     click_on "Create Applicant"
 
     assert_text "Applicant was successfully created"
@@ -27,7 +27,7 @@ class ApplicantsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @applicant.name
-    fill_in "Vacany", with: @applicant.vacany_id
+    fill_in "vacancy", with: @applicant.vacancy_id
     click_on "Update Applicant"
 
     assert_text "Applicant was successfully updated"
