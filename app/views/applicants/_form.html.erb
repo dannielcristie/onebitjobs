@@ -17,6 +17,11 @@
   </div>
 
   <div class="col-auto">
+    <%= form.label "Email", class: "form-label", for: "email" %>
+    <%= form.text_field :email, class: "form-control", id: "email" %>
+  </div>
+  
+  <div class="col-auto">
     <%= form.label "currículo", for: "curriculum", class: "form-label" %>
     <%= form.file_field :curriculum, class: "form-control", id: "curriculum" %>
   </div>

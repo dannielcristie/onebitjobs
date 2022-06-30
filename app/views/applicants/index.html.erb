@@ -5,6 +5,7 @@
     <thead class='table-active th-text-color'>
       <tr>
         <th>Nome</th>
+        <th>Email</th>
         <th class='text-center'>Enviado em</th>
         <th class='text-center'>Ações</th>
       </tr>
@@ -14,6 +15,7 @@
       <% @applicants.each do |applicant| %>
         <tr>
           <td class="align-middle"><%= applicant.name %></td>
+          <td class="align-middle"><%= applicant.email %></td>
           <td class="align-middle text-center"><%= applicant.created_at.strftime("%d/%m/%Y") %></td>
           <td class="align-middle text-center">
             <a href='<%= rails_blob_path(applicant.curriculum) if applicant.curriculum.attached? %>' target="_blank" class="text-secondary text-decoration-none" aria-label="Left Align">

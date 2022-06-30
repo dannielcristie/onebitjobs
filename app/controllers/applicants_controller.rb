@@ -72,6 +72,6 @@ class ApplicantsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def applicant_params
-    params.require(:applicant).permit(:name, :vacancy_id, :curriculum)
+    params.require(:applicant).permit(:name, :vacancy_id, :email, :curriculum)
   end
 end
