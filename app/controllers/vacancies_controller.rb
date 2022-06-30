@@ -12,7 +12,7 @@ class VacanciesController < ApplicationController
   def index
     @vacancies = current_company.vacancies.order(
       created_at: :desc,
-    ).page(params[:page]).per(2)
+    ).page(params[:page]).per(10)
   end
 
   # GET /vacancies/1 or /vacancies/1.json

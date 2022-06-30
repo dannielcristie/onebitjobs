@@ -8,7 +8,7 @@ class ApplicantsController < ApplicationController
     @applicants = Applicant.joins(:vacancy).where(
       vacancy_id: params[:vacancy_id],
       vacancy: { company_id: current_company.id },
-    )
+    ).page(params[:page]).per(5)
   end
 
   # GET /applicants/1 or /applicants/1.json
